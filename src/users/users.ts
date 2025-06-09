@@ -36,7 +36,7 @@ router.post('/authz/', (req: Request, res: Response) => {
 /*
   User api functions defined in the section below
  */
-const getPassword = (email: string): Promise<User> => {
+const getPassword = (email: string): Promise => {
    return new Promise((resolve, reject) => {
      connection.query<User[]>(
         "SELECT password from user where email = ?", [email], 
